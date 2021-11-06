@@ -1,5 +1,7 @@
 """
 Karatsuba Multiplication
+
+A faster, recursive way of multiplying two integers of n-length.
 """
 
 # x = (10^(n/2))a + b
@@ -22,7 +24,6 @@ def karatsuba(x, y):
     if len(str(x)) < 2 or len(str(y)) < 2:
         return x * y
     # splitting should work for any x or y of length > 4
-    # what if length of x or y == 3? a or c should be first two digits and set n to 2
     else:
         n = int(len(str(x)))
         print(f"n: {n}")
@@ -33,6 +34,7 @@ def karatsuba(x, y):
         b = int((str(x))[x_half:])
         c = int((str(y))[:y_half])
         d = int((str(y))[y_half:])
+        # what if length of x or y == 3? a or c should be first two digits and set n to 2
         if len(str(x)) == 3:
             n = 2
             a = int((str(x))[:2])
