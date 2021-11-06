@@ -5,4 +5,5 @@ Coursera.
 
 *Code Additions*
 
-* Oct 31, 2021: mergesort
+* Oct 31, 2021: Mergesort
+* Nov 5, 2021: Karatsuba multiplication (WIP)
