@@ -1,4 +1,6 @@
 """
+Merge Sort
+
 This algorithm sorts an unordered array of n integers into a new array, first by recursively reducing the
 unsorted array into multiple smaller arrays, until every sub-array has reached the 'base case' of containing 1 or 0
 elements. Each 'base case' array is considered sorted. Adjacent arrays are then merged, with their elements being
