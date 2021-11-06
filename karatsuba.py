@@ -13,22 +13,25 @@ Karatsuba Multiplication
 
 
 def karatsuba(x, y):
+    if len(str(x)) < 2 or len(str(y)) < 2:
+        return x * y
     # base case: if len x or len y < 2, return x * y
     # splitting should work for any odd x or y of length > 4
     # what if length of x or y == 3? a or c is first two digits
-    n = int(len(str(x)))
-    x_half = (len(str(x)))//2
-    y_half = (len(str(y)))//2
-    print(x_half, y_half)
-    a = int((str(x))[:x_half])
-    b = int((str(x))[x_half:])
-    c = int((str(y))[:y_half])
-    d = int((str(y))[y_half:])
-    print(a, b, c, d)
-    ac = a * c  # recursive
-    bd = b * d  # recursive
-    ad_plus_bc = ((a + b)*(c + d)) - ac - bd  # inner mult recursive
-    return ((10**n)*ac) + ((10**(int(n/2)))*ad_plus_bc) + bd
+    else:
+        n = int(len(str(x)))
+        x_half = (len(str(x)))//2
+        y_half = (len(str(y)))//2
+        print(x_half, y_half)
+        a = int((str(x))[:x_half])
+        b = int((str(x))[x_half:])
+        c = int((str(y))[:y_half])
+        d = int((str(y))[y_half:])
+        print(a, b, c, d)
+    ac = karatsuba(a, c)  # recursive
+    bd = karatsuba(b, d)  # recursive
+    ac_plus_bd = (karatsuba((a + b), (c + d))) - ac - bd  # inner mult recursive
+    return ((10**n)*ac) + ((10**(int(n/2)))*ac_plus_bd) + bd
 
 
-print(karatsuba(87, 39))
+print(karatsuba(12340000, 34560000))
