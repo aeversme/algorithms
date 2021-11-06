@@ -19,15 +19,18 @@ def karatsuba(x, y):
     # splitting should work for any odd x or y of length > 4
     # what if length of x or y == 3? a or c is first two digits
     else:
-        n = int(len(str(x)))
-        x_half = (len(str(x)))//2
-        y_half = (len(str(y)))//2
-        print(x_half, y_half)
-        a = int((str(x))[:x_half])
-        b = int((str(x))[x_half:])
-        c = int((str(y))[:y_half])
-        d = int((str(y))[y_half:])
-        print(a, b, c, d)
+        if len(str(x)) == 3:
+            pass
+        else:
+            n = int(len(str(x)))
+            x_half = (len(str(x)))//2
+            y_half = (len(str(y)))//2
+            print(x_half, y_half)
+            a = int((str(x))[:x_half])
+            b = int((str(x))[x_half:])
+            c = int((str(y))[:y_half])
+            d = int((str(y))[y_half:])
+            print(a, b, c, d)
     ac = karatsuba(a, c)  # recursive
     bd = karatsuba(b, d)  # recursive
     ac_plus_bd = (karatsuba((a + b), (c + d))) - ac - bd  # inner mult recursive

@@ -2,6 +2,7 @@ import pytest
 from karatsuba import karatsuba
 
 input_data = [(87, 52), (12340000, 34560000), (8714, 5267)]
+# implement a random integer generator function that accepts input n for integer length
 
 
 def test_karatsuba_small_input():
