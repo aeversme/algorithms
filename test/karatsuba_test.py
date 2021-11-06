@@ -1,4 +1,5 @@
 import pytest
+from random import randint
 from karatsuba import karatsuba
 
 input_data = [(87, 52), (12340000, 34560000), (8714, 5267)]
@@ -7,17 +8,20 @@ input_data = [(87, 52), (12340000, 34560000), (8714, 5267)]
 
 def test_karatsuba_small_input():
     x, y = input_data[0]
+    print(f"Expected result: {x * y}")
     product = karatsuba(x, y)
-    assert product == 4524
+    assert product == x * y
 
 
 def test_karatsuba_large_input():
     x, y = input_data[1]
+    print(f"Expected result: {x * y}")
     product = karatsuba(x, y)
-    assert product == 426470400000000
+    assert product == x * y
 
 
 def test_karatsuba_uneven_input():
     x, y = input_data[2]
+    print(f"Expected result: {x * y}")
     product = karatsuba(x, y)
-    assert product == 45896638
+    assert product == x * y
